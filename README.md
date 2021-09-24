@@ -36,7 +36,7 @@ service firewalld start
 
 
 
-53:
+53:  
 wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
 sed -i "s/10.10.20/10.10.53/g" \`grep 10.10.20 -rl ./wgs.sh\`  
 chmod +x wgs.sh  
@@ -45,7 +45,7 @@ service firewalld start
 
 
 
-54:
+54:  
 wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
 sed -i "s/10.10.20/10.10.54/g" \`grep 10.10.20 -rl ./wgs.sh\`  
 chmod +x wgs.sh  
