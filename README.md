@@ -25,12 +25,12 @@ https://play.google.com/store/apps/details?id=com.wireguard.android
 
 hello world:
 
-52:
-wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt 
-sed -i "s/10.10.20.1/10.10.52.1/g" `grep 10.10.20.1 -rl ./wgs.sh`
-chmod +x wgs.sh
-service firewalld start
-./wgs.sh
+52:  
+wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
+sed -i "s/10.10.20.1/10.10.52.1/g" `grep 10.10.20.1 -rl ./wgs.sh`  
+chmod +x wgs.sh  
+./wgs.sh  
+service firewalld start  
 
 
 
