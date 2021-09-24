@@ -27,7 +27,7 @@ hello world:
 
 52:  
 wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
-sed -i "s/10.10.20.1/10.10.52.1/g" `grep 10.10.20.1 -rl ./wgs.sh`  
+sed -i "s/10.10.20/10.10.52/g" \`grep 10.10.20 -rl ./wgs.sh\`  
 chmod +x wgs.sh  
 ./wgs.sh  
 service firewalld start  
@@ -35,18 +35,19 @@ service firewalld start
 
 
 
+
 53:
-wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt 
-sed -i "s/10.10.20.1/10.10.53.1/g" `grep 10.10.20.1 -rl ./wgs.sh`
-chmod +x wgs.sh
-service firewalld start
-./wgs.sh
+wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
+sed -i "s/10.10.20/10.10.53/g" \`grep 10.10.20 -rl ./wgs.sh\`  
+chmod +x wgs.sh  
+./wgs.sh  
+service firewalld start  
 
 
 
 54:
-wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt 
-sed -i "s/10.10.20.1/10.10.54.1/g" `grep 10.10.20.1 -rl ./wgs.sh`
-chmod +x wgs.sh
-service firewalld start
-./wgs.sh
+wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
+sed -i "s/10.10.20/10.10.54/g" \`grep 10.10.20 -rl ./wgs.sh\`  
+chmod +x wgs.sh  
+./wgs.sh  
+service firewalld start  
