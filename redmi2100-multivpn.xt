@@ -1,0 +1,27 @@
+1, 刷系统（好像可以不刷）当前固件版本【 01.24.2021 】    
+更新源  vim /etc/opkg/distfeeds.conf   
+src/gz openwrt_base https://downloads.openwrt.org/releases/packages-21.02/mipsel_24kc/base  
+src/gz openwrt_luci https://downloads.openwrt.org/releases/packages-21.02/mipsel_24kc/luci  
+src/gz openwrt_packages https://downloads.openwrt.org/releases/packages-21.02/mipsel_24kc/packages  
+src/gz openwrt_routing https://downloads.openwrt.org/releases/packages-21.02/mipsel_24kc/routing  
+src/gz openwrt_telephony https://downloads.openwrt.org/releases/packages-21.02/mipsel_24kc/telephony  
+
+2, 安装 luci-proto-wireguard  （luci-i18n-wireguard-zh-cn 这个不安装，会让重启后 proto有问题 ）  
+修改成 192.168.52.1 确认 52生效后 手动重启   
+
+3，设计vlan 3个 （标识与标识）  
+4，设计lan53  lan54 (  选静态地址，选设备， IP 192.168.53.1   192.168.54.1     
+     设置网络mask  设置 dns 8.8.8.8  设置 dhcp ，选择 防火墙  
+   
+
+安装3台服务器：  
+1，拷贝 代码到3台服务器上， 分别执行  52.sh  53.sh 54.sh .  
+2，把哪台机器执行了哪个代码写到纸上，贴于路由器。  
+3，在路由器配置 wireguard    
+   创建 wvpn53 wvpn53  wvpn54: 附加：keepalive 25  防火墙  
+  
+4,目视测试：可以看到3个VPN上都有出入流量，没有就得排查  
+
+
+回路安装：  
+
