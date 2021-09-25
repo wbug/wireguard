@@ -26,11 +26,13 @@ https://play.google.com/store/apps/details?id=com.wireguard.android
 hello world:
 
 52:  
+//安装  
 wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
 sed -i "s/10.10.20/10.10.52/g" \`grep 10.10.20 -rl ./wgs.sh\`  
 chmod +x wgs.sh  
 service firewalld start  
 ./wgs.sh  
+//restart .. 最好保存为  restart.sh 
 service firewalld start  
 service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.52.22:44158  
@@ -45,11 +47,13 @@ iptables-save
 
 
 53:  
+//安装  
 wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
 sed -i "s/10.10.20/10.10.53/g" \`grep 10.10.20 -rl ./wgs.sh\`  
 chmod +x wgs.sh  
 service firewalld start  
 ./wgs.sh  
+//restart .. 最好保存为  restart.sh 
 service firewalld start  
 service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.53.22:44158  
@@ -62,11 +66,13 @@ iptables-save
 
 
 54:  
+//安装 
 wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
 sed -i "s/10.10.20/10.10.54/g" \`grep 10.10.20 -rl ./wgs.sh\`  
 chmod +x wgs.sh  
 service firewalld start  
 ./wgs.sh  
+//restart .. 最好保存为  restart.sh 
 service firewalld start  
 service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.54.22:44158  
