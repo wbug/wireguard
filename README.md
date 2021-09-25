@@ -32,6 +32,9 @@ chmod +x wgs.sh
 service firewalld start  
 ./wgs.sh  
 service wg-quick@wg0 restart  
+iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.52.22:44158  
+iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.52.22:44158  
+service iptables save  
 
 
 
@@ -45,6 +48,9 @@ chmod +x wgs.sh
 service firewalld start  
 ./wgs.sh  
 service wg-quick@wg0 restart   
+iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.53.22:44158  
+iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.53.22:44158  
+service iptables save  
 
 
 
@@ -55,3 +61,8 @@ chmod +x wgs.sh
 service firewalld start  
 ./wgs.sh  
 service wg-quick@wg0 restart  
+iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.54.22:44158  
+iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.54.22:44158  
+service iptables save  
+
+
