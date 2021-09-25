@@ -31,9 +31,12 @@ sed -i "s/10.10.20/10.10.52/g" \`grep 10.10.20 -rl ./wgs.sh\`
 chmod +x wgs.sh  
 service firewalld start  
 ./wgs.sh  
+service firewalld start  
 service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.52.22:44158  
 iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.52.22:44158  
+iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.52.22:80  
+iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.52.22:22  
 iptables-save  
 
 
@@ -47,10 +50,14 @@ sed -i "s/10.10.20/10.10.53/g" \`grep 10.10.20 -rl ./wgs.sh\`
 chmod +x wgs.sh  
 service firewalld start  
 ./wgs.sh  
-service wg-quick@wg0 restart   
+service firewalld start  
+service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.53.22:44158  
 iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.53.22:44158  
+iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.53.22:80  
+iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.53.22:22  
 iptables-save   
+
 
 
 
@@ -60,9 +67,12 @@ sed -i "s/10.10.20/10.10.54/g" \`grep 10.10.20 -rl ./wgs.sh\`
 chmod +x wgs.sh  
 service firewalld start  
 ./wgs.sh  
+service firewalld start  
 service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.54.22:44158  
 iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.54.22:44158  
+iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.54.22:80  
+iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.54.22:22  
 iptables-save  
 
 
