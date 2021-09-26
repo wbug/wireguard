@@ -66,7 +66,7 @@ iptables-save
 
 
 54:  
-//安装 
+//安装   
 wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
 sed -i "s/10.10.20/10.10.54/g" \`grep 10.10.20 -rl ./wgs.sh\`  
 chmod +x wgs.sh  
