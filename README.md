@@ -37,7 +37,9 @@ service firewalld start
 service firewalld start  
 service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.52.22:44158  
+iptables -t nat  -A POSTROUTING  -d 10.10.52.22    -p tcp --dport 44158  -j SNAT --to-source 10.10.52.1  
 iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.52.22:44158  
+iptables -t nat  -A POSTROUTING  -d 10.10.52.22    -p udp --dport 44158  -j SNAT --to-source 10.10.52.1  
 iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.52.22:80  
 iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.52.22:22  
 iptables-save  
@@ -59,7 +61,9 @@ service firewalld start
 service firewalld start  
 service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.53.22:44158  
+iptables -t nat  -A POSTROUTING  -d 10.10.53.22    -p tcp --dport 44158  -j SNAT --to-source 10.10.53.1  
 iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.53.22:44158  
+iptables -t nat  -A POSTROUTING  -d 10.10.53.22    -p udp --dport 44158  -j SNAT --to-source 10.10.53.1 
 iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.53.22:80  
 iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.53.22:22  
 iptables-save   
@@ -79,7 +83,9 @@ service firewalld start
 service firewalld start  
 service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.54.22:44158  
+iptables -t nat  -A POSTROUTING  -d 10.10.54.22    -p tcp --dport 44158  -j SNAT --to-source 10.10.54.1  
 iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.54.22:44158  
+iptables -t nat  -A POSTROUTING  -d 10.10.54.22    -p udp --dport 44158  -j SNAT --to-source 10.10.54.1 
 iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.54.22:80  
 iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.54.22:22  
 iptables-save  
